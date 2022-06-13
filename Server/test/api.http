@@ -1,0 +1,35 @@
+@host = http://localhost:8888
+#################### 用户模块相关开始 ####################
+### 创建用户
+POST {{host}}/api/user/addUser HTTP/1.1
+content-type: application/json
+
+{
+  "nick_name": "Merry",
+  "mobile": "18699998888",
+  "description": "这个是个人描述内容"
+}
+
+### 获取用户列表
+GET {{host}}/api/user/userList HTTP/1.1
+
+### 获取单个用户
+GET {{host}}/api/user/userInfo?id=1 HTTP/1.1
+
+### 更新用户信息
+POST {{host}}/api/user/editUser HTTP/1.1
+content-type: application/json
+
+{
+  "id": 1,
+  "nick_name": "Oh My God"
+}
+
+
+### 删除用户
+POST {{host}}/api/user/delUser HTTP/1.1
+
+{
+  "id": 1
+}
+#################### 用户模块相关结束 ####################
