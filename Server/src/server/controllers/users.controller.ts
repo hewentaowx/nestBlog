@@ -33,7 +33,7 @@ export class UsersController {
   @ApiOperation({ summary: '查找全部用户', description: '查找全部用户' })
   @ApiQuery({ name: 'page', required: true })
   @ApiQuery({ name: 'size', required: true })
-  async getUserList(@Query() query): Promise<object> {
+  async getUserList(@Query() query: object): Promise<object> {
     return await this.usersService.getUserList(query);
   }
 
@@ -45,19 +45,19 @@ export class UsersController {
   @Get('userInfo')
   @ApiOperation({ summary: '查找单个用户', description: '查找单个用户' })
   @ApiQuery({ name: 'id', required: true })
-  async getUserInfo(@Query() query): Promise<object> {
+  async getUserInfo(@Query() query: object): Promise<object> {
     return await this.usersService.getUserInfo(query);
   }
 
   /**
    * 更新用户信息
    * @param {Object} body 具体见UpdateUserDto
-   * @returns
+   * @returns {Object}
    */
   @Post('editUser')
   @ApiOperation({ summary: '更新用户信息', description: '更新用户信息' })
   @ApiBody({ type: UpdateUserDto, description: '参数如下' })
-  async editUser(@Body() body: UpdateUserDto) {
+  async editUser(@Body() body: UpdateUserDto): Promise<object> {
     return await this.usersService.editUser(body);
   }
 

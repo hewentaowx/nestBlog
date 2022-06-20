@@ -22,7 +22,7 @@ content-type: application/json
 
 {
   "id": 1,
-  "nick_name": "Oh My God"
+  "nick_name": "Hello World"
 }
 
 

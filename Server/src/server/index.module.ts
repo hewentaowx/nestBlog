@@ -6,6 +6,7 @@ import { ArticlesService } from './services/articles.service';
 import { UsersEntity } from './entities/users.entity';
 import { UsersController } from './controllers/users.controller';
 import { UsersService } from './services/users.service';
+
 @Module({
   imports: [
     TypeOrmModule.forFeature([
