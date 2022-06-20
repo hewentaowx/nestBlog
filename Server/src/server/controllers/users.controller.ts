@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Query, Post, Param, ParseIntPipe } from '@nestjs/common';
+import { Body, Controller, Get, Query, Post } from '@nestjs/common';
 import { ApiOperation, ApiTags, ApiQuery, ApiBody, ApiResponse } from '@nestjs/swagger';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { DeleteUserDto } from '../dto/delete-user.dto';
@@ -19,7 +19,7 @@ export class UsersController {
   @ApiOperation({ summary: '新增用户', description: '新增用户' })
   @ApiBody({ type: CreateUserDto, description: '参数如下' })
   @ApiResponse({ status: 200, description: '新增用户成功' })
-  async addUser(@Body() user: CreateUserDto) {
+  async addUser(@Body() user: CreateUserDto): Promise<object> {
     return await this.usersService.addUser(user);
   }
 
@@ -33,7 +33,7 @@ export class UsersController {
   @ApiOperation({ summary: '查找全部用户', description: '查找全部用户' })
   @ApiQuery({ name: 'page', required: true })
   @ApiQuery({ name: 'size', required: true })
-  async getUserList(@Query() query) {
+  async getUserList(@Query() query): Promise<object> {
     return await this.usersService.getUserList(query);
   }
 
@@ -45,7 +45,7 @@ export class UsersController {
   @Get('userInfo')
   @ApiOperation({ summary: '查找单个用户', description: '查找单个用户' })
   @ApiQuery({ name: 'id', required: true })
-  async getUserInfo(@Query() query) {
+  async getUserInfo(@Query() query): Promise<object> {
     return await this.usersService.getUserInfo(query);
   }
 
@@ -63,7 +63,7 @@ export class UsersController {
 
   /**
    * 删除用户
-   * @param
+   * @param {}
    */
   @Post('delUser')
   @ApiOperation({ summary: '利用id删除用户', description: '利用id删除用户' })

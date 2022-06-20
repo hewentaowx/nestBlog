@@ -17,14 +17,14 @@ const path = env === 'production' ? '.env.production' : '.env.development';
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => {
         return {
-          type: "mysql",
-          entities: ["dist/**/*.entity{.ts,.js}"],
-          host: configService.get("DB_HOST"),
-          port: configService.get("DB_PORT"),
-          username: configService.get("DB_USER"),
-          password: configService.get("DB_PASSWORD"),
-          database: configService.get("DB_DATABASE"),
-          timezone: "+08:00",
+          type: 'mysql',
+          entities: ['dist/**/*.entity{.ts,.js}'],
+          host: configService.get('DB_HOST'),
+          port: configService.get('DB_PORT'),
+          username: configService.get('DB_USER'),
+          password: configService.get('DB_PASSWORD'),
+          database: configService.get('DB_DATABASE'),
+          timezone: '+08:00',
         };
       },
     }),
