@@ -11,7 +11,7 @@ import { UsersService } from './services/users.service';
   imports: [
     TypeOrmModule.forFeature([
       ArticlesEntity,
-      UsersEntity
+      UsersEntity,
     ])
   ],
   controllers: [
@@ -24,4 +24,3 @@ import { UsersService } from './services/users.service';
   ],
 })
 export class IndexModule {}
-
